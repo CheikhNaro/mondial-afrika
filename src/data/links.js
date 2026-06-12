@@ -422,6 +422,12 @@ export const categories = [
         description: 'App Android TV. Films, séries et animes en streaming direct sur ta télé.',
         badge: '📺 TV',
       },
+      {
+        url: 'https://drive.google.com/drive/folders/1YkZbZI7zkHouttpNm_GGtUctzNPn9Xgz?usp=sharing',
+        name: 'Cricfy',
+        description: 'App Android TV pour le sport en direct. Foot, cricket, basket et plus sur grand écran.',
+        badge: '⚽ Sport',
+      },
     ],
   },
 ];
