@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="footer-content">
         <div className="footer-logo">
           <span className="footer-logo-icon">◈</span>
-          <span>Mondial-<span className="footer-gold">Africa</span></span>
+          <span>Mondial-<span className="footer-gold">Afrika</span></span>
         </div>
 
         <div className="footer-proverb">
@@ -25,7 +25,7 @@ export default function Footer() {
           <span>Astuce : installe <strong>Brave</strong> (mobile) ou <strong>uBlock Origin</strong> (PC) pour 0 pub</span>
         </div>
 
-        <p className="footer-copy">© 2026 Mondial-Africa — Tous droits réservés</p>
+        <p className="footer-copy">© 2026 Mondial-Afrika — Tous droits réservés</p>
       </div>
     </footer>
   );

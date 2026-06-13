@@ -20,7 +20,7 @@ export default function Header({ categories }) {
       <div className="header-inner">
         <div className="header-logo">
           <div className="logo-mark" />
-          <span className="logo-text">Mondial-<span className="logo-accent">Africa</span></span>
+          <span className="logo-text">⚽ Mondial-<span className="logo-accent">Afrika</span></span>
         </div>
 
         <nav className="header-nav">

@@ -369,28 +369,6 @@ export const categories = [
     ],
   },
   {
-    id: 'bonus',
-    icon: 'gift',
-    title: 'Outils Bonus',
-    color: '#9B59B6',
-    colorDark: '#7D3C98',
-    description: 'Les outils indispensables pour booster ton expérience',
-    links: [
-      {
-        url: 'https://www.justwatch.com',
-        name: 'JustWatch',
-        description: 'Trouve sur quel site légal un film est disponible gratuitement.',
-        badge: 'Recherche',
-      },
-      {
-        url: 'https://www.stremio.com',
-        name: 'Stremio',
-        description: 'Application qui agrège tous les sites de streaming. TV, PC, téléphone.',
-        badge: 'Must Have',
-      },
-    ],
-  },
-  {
     id: 'android-tv',
     icon: 'tv',
     title: 'Android TV',
@@ -427,6 +405,28 @@ export const categories = [
         name: 'Cricfy',
         description: 'App Android TV pour le sport en direct. Foot, cricket, basket et plus sur grand écran.',
         badge: 'Sport',
+      },
+    ],
+  },
+  {
+    id: 'bonus',
+    icon: 'gift',
+    title: 'Outils Bonus',
+    color: '#9B59B6',
+    colorDark: '#7D3C98',
+    description: 'Les outils indispensables pour booster ton expérience',
+    links: [
+      {
+        url: 'https://www.justwatch.com',
+        name: 'JustWatch',
+        description: 'Trouve sur quel site légal un film est disponible gratuitement.',
+        badge: 'Recherche',
+      },
+      {
+        url: 'https://www.stremio.com',
+        name: 'Stremio',
+        description: 'Application qui agrège tous les sites de streaming. TV, PC, téléphone.',
+        badge: 'Must Have',
       },
     ],
   },

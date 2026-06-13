@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import AdBlockerModal from './components/AdBlockerModal';
 import ScrollToTop from './components/ScrollToTop';
 import GradientBackground from './components/GradientBackground';
+import CursorFollower from './components/CursorFollower';
 
 import './App.css';
 
@@ -38,6 +39,7 @@ export default function App() {
       </main>
       <Footer />
       <ScrollToTop />
+      <CursorFollower />
     </>
   );
 }

@@ -1,20 +1,18 @@
 .link-card {
   display: block;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
   position: relative;
-  box-shadow: var(--shadow-card);
-  transition: transform var(--duration) var(--easing), box-shadow var(--duration) var(--easing), border-color var(--duration) var(--easing);
   text-decoration: none;
   color: inherit;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--duration) var(--easing), box-shadow var(--duration) var(--easing);
 }
 
 .link-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-elevated);
-  border-color: var(--border-hover);
+  z-index: 101;
 }
 
 .link-card:active {
@@ -26,16 +24,41 @@
   background: linear-gradient(135deg, #141418, #16162a);
 }
 
-.link-card-glow {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity var(--duration) var(--easing);
+.link-card-base {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
-.link-card:hover .link-card-glow {
-  opacity: 1;
+.link-card:hover .link-card-base {
+  border-color: var(--border-hover);
+}
+
+.link-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: var(--radius);
+  border: 1px solid rgba(124, 135, 240, 0.3);
+  background: linear-gradient(135deg, rgba(20, 20, 35, 0.98), rgba(30, 30, 60, 0.98));
+  box-shadow: inset 0 0 40px rgba(94, 106, 210, 0.1);
+  opacity: var(--opacity, 0);
+  transition: opacity 0.15s;
+  -webkit-mask: radial-gradient(350px 350px at var(--x, -100px) var(--y, -100px), #000 0%, transparent 55%);
+  mask: radial-gradient(350px 350px at var(--x, -100px) var(--y, -100px), #000 0%, transparent 55%);
+}
+
+.link-card-overlay .link-name {
+  text-shadow: 0 0 12px rgba(124, 135, 240, 0.3);
+}
+
+.link-card-overlay .link-arrow {
+  color: var(--accent-bright, var(--accent));
+  background: rgba(124, 135, 240, 0.15);
+  box-shadow: 0 0 10px rgba(124, 135, 240, 0.15);
 }
 
 .link-card-inner {

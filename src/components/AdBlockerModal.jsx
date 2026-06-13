@@ -73,7 +73,7 @@ export default function AdBlockerModal() {
 
         <div className="modal-brand">
           <div className="modal-brand-dot" />
-          <span className="modal-brand-name">Mondial-<strong>Africa</strong></span>
+          <span className="modal-brand-name">Mondial-<strong>Afrika</strong></span>
         </div>
 
         <div className={`modal-header ${alreadyProtected ? 'modal-header--success' : ''}`}>
