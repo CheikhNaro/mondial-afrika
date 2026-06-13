@@ -1,30 +1,12 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
-import { categories } from './data/links';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import CategorySection from './components/CategorySection';
-import Footer from './components/Footer';
-import AdBlockerModal from './components/AdBlockerModal';
-import ScrollToTop from './components/ScrollToTop';
-import GradientBackground from './components/GradientBackground';
-import CursorFollower from './components/CursorFollower';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import './ExitPopup.css';
 
-import './App.css';
-import './components/ExitPopup.css';
-
-function ExitPopup() {
-  const [visible, setVisible] = useState(false);
+export default function ExitPopup() {
   const [expanded, setExpanded] = useState(false);
   const [dismissed, setDismissed] = useState(false);
   const [autoShown, setAutoShown] = useState(false);
   const [siteName, setSiteName] = useState('');
   const inputRef = useRef(null);
-
-  useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 400);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -42,7 +24,9 @@ function ExitPopup() {
     }
   }, [expanded]);
 
-  const toggle = useCallback(() => setExpanded(prev => !prev), []);
+  const toggle = useCallback(() => {
+    setExpanded(prev => !prev);
+  }, []);
 
   function handleSend() {
     const text = siteName.trim()
@@ -59,13 +43,9 @@ function ExitPopup() {
   }
 
   return (
-    <>
-      <button
-        className={`exit-icon ${visible ? 'exit-icon--visible' : ''}`}
-        onClick={toggle}
-        aria-label="Signaler un lien mort"
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <div className="exit-widget">
+      <button className="exit-icon" onClick={toggle} aria-label="Signaler un lien mort">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
         </svg>
       </button>
@@ -96,48 +76,6 @@ function ExitPopup() {
           </button>
         </div>
       )}
-    </>
-  );
-}
-
-export default function App() {
-  const totalLinks = categories.reduce((acc, cat) => acc + cat.links.length, 0);
-
-  useEffect(() => {
-    const html = document.documentElement;
-    const prev = html.style.scrollBehavior;
-    html.style.scrollBehavior = 'auto';
-    window.scrollTo(0, 0);
-    html.style.scrollBehavior = prev;
-  }, []);
-
-  useEffect(() => {
-    const els = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-      { threshold: 0.08 }
-    );
-    els.forEach(el => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <>
-      <GradientBackground />
-      <AdBlockerModal />
-      <Header categories={categories} />
-      <main className="main">
-        <Hero totalLinks={totalLinks} />
-          <div className="main-content">
-            {categories.map(cat => (
-              <CategorySection key={cat.id} category={cat} />
-            ))}
-          </div>
-      </main>
-      <Footer />
-      <ScrollToTop />
-      <CursorFollower />
-      <ExitPopup />
-    </>
+    </div>
   );
 }
