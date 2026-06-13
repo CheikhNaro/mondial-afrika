@@ -25,7 +25,7 @@ export default function Footer() {
           <span>Astuce : installe <strong>Brave</strong> (mobile) ou <strong>uBlock Origin</strong> (PC) pour 0 pub</span>
         </div>
 
-        <p className="footer-copy">© 2025 Mondial-Africa — Tous droits réservés</p>
+        <p className="footer-copy">© 2026 Mondial-Africa — Tous droits réservés</p>
       </div>
     </footer>
   );

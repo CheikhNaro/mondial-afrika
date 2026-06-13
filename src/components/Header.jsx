@@ -11,7 +11,7 @@ const iconMap = {
 };
 
 const navLabelMap = {
-  'android-tv': 'androidTV',
+  'android-tv': 'Android-TV',
 };
 
 export default function Header({ categories }) {

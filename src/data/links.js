@@ -392,7 +392,7 @@ export const categories = [
   },
   {
     id: 'android-tv',
-    icon: 'device',
+    icon: 'tv',
     title: 'Android TV',
     color: '#1E90FF',
     colorDark: '#1565C0',
