@@ -114,8 +114,8 @@ export const categories = [
         badge: 'Afrique',
       },
       {
-        url: 'https://zhangboheng.github.io/Easy-Web-TV-M3u8/routes/tv.html',
-        name: 'Easy Web TV',
+        url: 'https://witv.team/',
+        name: 'WiTV',
         description: 'Web TV M3U8. Centaines de chaînes mondiales. Sans inscription.',
         badge: 'Mondial',
       },
